@@ -1,13 +1,17 @@
-def add(x, y):
-    return x + y
+    def get_user_input():
+    x = float(input("Enter the first number: "))
+    y = float(input("Enter the second number: "))
+    operation = input("Enter the operation (+, -, *, /): ")
+    return x, y, operation
 
-def subtract(x, y):
-    return x - y
-
-def multiply(x, y):
-    return x * y
-
-def divide(x, y):
-    if y == 0:
-        return "Error: Division by zero!"
-    return x / y
+def perform_operation(x, y, operation):
+    if operation == "+":
+        return add(x, y)
+    elif operation == "-":
+        return subtract(x, y)
+    elif operation == "*":
+        return multiply(x, y)
+    elif operation == "/":
+        return divide(x, y)
+    else:
+        return "Invalid operation!"
